@@ -5,7 +5,7 @@ import User.Membre;
 import java.util.List;
 import java.util.Map;
 
-public sealed class Project permits Tache {
+public class Project {
     protected String info;
     protected chefprojet chefProjet;
     protected List<Membre> equipe;

@@ -2,6 +2,7 @@ package Probleme;
 
 import User.Membre;
 import java.time.LocalDate;
+
 public final class Bug extends Probleme {
 
     private Membre membreAssigne;

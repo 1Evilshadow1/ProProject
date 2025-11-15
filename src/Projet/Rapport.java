@@ -1,18 +1,19 @@
 package Projet;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+import User.Membre;
 
 public class Rapport {
     protected String id;
     protected Project project;
-    protected Date dateGeneration;
+    protected LocalDate dateGeneration;
     protected Map<TaskStatue, Integer> statistiquesTaches;
     protected List<Membre> membresActifs;
     protected double tauxAvancement;
 
-    public Rapport(String id, Project project, Date dateGeneration,
+    public Rapport(String id, Project project, LocalDate dateGeneration,
                    Map<TaskStatue, Integer> statistiquesTaches,
                    List<Membre> membresActifs, double tauxAvancement) {
         this.id = id;
