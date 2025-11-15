@@ -13,6 +13,6 @@ public final class ProblemeSysteme extends Probleme {
     @Override
     public void updateStatutProbleme() {
         this.statut = StatutProbleme.Resolu;
-        this.dateResolution = LocalDate.of();
+        this.dateResolution = LocalDate.now();
     }
 }

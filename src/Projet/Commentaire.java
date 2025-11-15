@@ -1,11 +1,12 @@
 package Projet;
-
+import User.Membre;
 import java.util.Date;
+import java.time.LocalDate;
 public class Commentaire {
     protected String id;
     protected String contenue;
     protected Membre auteur;
-    protected Date dateCreation;
+    protected LocalDate dateCreation;
     protected Task tacheliee;
 
     public Commentaire(String id, String contenue , Membre auteur, Task tacheliee) {
@@ -13,7 +14,7 @@ public class Commentaire {
         this.contenue = contenue;
         this.auteur = auteur;
         this.tacheliee = tacheliee;
-        this.dateCreation = new Date();
+        this.dateCreation = LocalDate.now();
     }
 
     public void editer(String nouveauContenue) {
@@ -26,5 +27,13 @@ public class Commentaire {
 
     public String getContenue(){
         return contenue;
+    }
+
+    public void afficherDetailsCommentaire() {
+        System.out.println("ID Commentaire: " + id);
+        System.out.println("Contenu: " + contenue);
+        System.out.println("Auteur: " + auteur.getName() + " " + auteur.getPrenom());
+        System.out.println("Date de création: " + dateCreation);
+        System.out.println("Tâche liée ID: " + tacheliee.getId());
     }
 }

@@ -11,6 +11,7 @@ public class User  {
     private LocalDateTime dateCreation;
     private RoleUser role;
     private TypeUser type;
+
     //methods
     public User(String id , String nom, String prenom, String email, String mdp){
         this.id=id;
@@ -35,7 +36,5 @@ public class User  {
     public String getMdp(){
         return mdp;
     }
-
-
 
 }
