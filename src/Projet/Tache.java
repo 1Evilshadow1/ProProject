@@ -2,8 +2,9 @@ package Projet;
 
 import User.Membre;
 import java.util.List;
+import Projet.Project;
 
-public class Tache {
+public class Tache extends Project{
     protected String tacheInfo;
     protected Membre membreAssigne;
     protected TaskStatue statut;

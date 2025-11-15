@@ -2,10 +2,11 @@ package Projet;
 
 import User.chefprojet;
 import User.Membre;
+import Projet.Tache;
 import java.util.List;
 import java.util.Map;
 
-public sealed class Project permits Tache {
+public abstract class Project  {
     protected String info;
     protected chefprojet chefProjet;
     protected List<Membre> equipe;
