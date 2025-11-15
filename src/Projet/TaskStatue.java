@@ -1,0 +1,10 @@
+package Projet;
+
+public enum TaskStatue {
+    A_FAIRE,
+    EN_COURS,
+    EN_REVUE,
+    TERMINEE,
+    BLOQUEE,
+    ANNULÉE
+}
