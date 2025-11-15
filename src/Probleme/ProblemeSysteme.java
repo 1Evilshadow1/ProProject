@@ -1,6 +1,9 @@
 package Probleme;
-import java.util.Date;
+
 import java.time.LocalDate;
+
+import User.Administrateur;
+
 public final class ProblemeSysteme extends Probleme {
 
     private Administrateur adminAssigne;

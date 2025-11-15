@@ -7,9 +7,9 @@ public class Commentaire {
     protected String contenue;
     protected Membre auteur;
     protected LocalDate dateCreation;
-    protected Task tacheliee;
+    protected Tache tacheliee;
 
-    public Commentaire(String id, String contenue , Membre auteur, Task tacheliee) {
+    public Commentaire(String id, String contenue , Membre auteur, Tache tacheliee) {
         this.id = id;
         this.contenue = contenue;
         this.auteur = auteur;
@@ -34,6 +34,6 @@ public class Commentaire {
         System.out.println("Contenu: " + contenue);
         System.out.println("Auteur: " + auteur.getName() + " " + auteur.getPrenom());
         System.out.println("Date de création: " + dateCreation);
-        System.out.println("Tâche liée ID: " + tacheliee.getId());
+        System.out.println("Tâche liée ID: " + tacheliee.getInfo());
     }
 }
