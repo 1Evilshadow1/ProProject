@@ -6,5 +6,5 @@ public enum TaskStatue {
     EN_REVUE,
     TERMINEE,
     BLOQUEE,
-    ANNULÉE
+    ANNULEE
 }

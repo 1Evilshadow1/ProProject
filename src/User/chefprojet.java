@@ -2,7 +2,7 @@ package User;
 import Projet.Project;
 import java.util.List;
 
-public class chefprojet extends User {
+public final class chefprojet extends User {
     protected List <Project> projetAGerer;
 
     public chefprojet(String id, String nom, String prenom, String email, String mdp, List<Project> projetAGerer) {

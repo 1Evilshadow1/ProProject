@@ -2,7 +2,7 @@ package User;
 
 import java.time.LocalDateTime;
 
-public class User  {
+public sealed class User permits chefprojet,Membre,Administrateur {
     private String id;
     private String nom;
     private String prenom;
@@ -36,5 +36,7 @@ public class User  {
     public String getMdp(){
         return mdp;
     }
-
+    public void ChangerMDP(String mdp){
+        this.mdp=mdp;
+    }
 }

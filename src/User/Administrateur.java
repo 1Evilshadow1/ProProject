@@ -2,7 +2,7 @@ package User;
 
 import java.util.List;
 
-public class Administrateur extends User {
+public final  class Administrateur extends User {
     protected List <String> problemeAGerer;
 
     public Administrateur( String id , String nom, String prenom, String email, String mdp, List<String> problemeAGerer) {
