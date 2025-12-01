@@ -2,9 +2,8 @@ package Projet;
 
 import User.Membre;
 import java.util.List;
-import Projet.Project;
 
-public class Tache extends Project{
+public class Tache {
     protected String tacheInfo;
     protected Membre membreAssigne;
     protected TaskStatue statut;
@@ -13,7 +12,8 @@ public class Tache extends Project{
 
     public Tache(String info, Membre membre, TaskStatue statut,
                     List<Commentaire> commentaires, Difficulté difficulté) {
-            this.tacheInfo = info;
+
+        this.tacheInfo = info;
             this.membreAssigne = membre;
             this.statut = statut;
             this.commentaires = commentaires;
