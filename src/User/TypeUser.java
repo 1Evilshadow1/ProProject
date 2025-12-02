@@ -1,7 +1,7 @@
 package User;
 
 public enum TypeUser {
-    chefProjet,
-    Membre,
-    Adminstrateur;
+    CHEF_PROJET,
+    MEMBRE,
+    ADMINISTRATEUR;
 }

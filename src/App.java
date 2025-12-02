@@ -1,11 +1,17 @@
 import Probleme.Bug;
 import Probleme.ProblemeSysteme;
 import Probleme.StatutProbleme;
+import Projet.Commentaire;
+import Projet.Project;
+import Projet.Tache;
 import User.Membre;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 import User.Administrateur;
 import User.Membre;
+import User.chefprojet;
 
 public class App {
     public static void main(String[] args) {
@@ -23,6 +29,13 @@ public class App {
         ps.updateStatutProbleme();
         */
 
-        System.out.println("");
+        List<Tache> tachesAssignes =new ArrayList<>();
+        Membre azizM = new Membre("123","aziz","benothmen","aziz.benothmen2002@gmail.com","Aziz123","developpeur","MEMBRE","dispo",tachesAssignes);
+        System.out.println(azizM.getNbrTache());
+
+        List<Project>  ProjetAgerer= new ArrayList<>();
+
+
     }
 }
+
