@@ -11,13 +11,14 @@ public class Tache {
     protected Difficulté difficulté;
 
     public Tache(String info, Membre membre, TaskStatue statut,
-                    List<Commentaire> commentaires, Difficulté difficulté) {
+                    List<Commentaire> commentaires,  String difficulté , String statue) {
 
         this.tacheInfo = info;
             this.membreAssigne = membre;
             this.statut = statut;
             this.commentaires = commentaires;
-            this.difficulté = difficulté;
+            this.difficulté = Difficulté.valueOf(difficulté);
+            this.statut=TaskStatue.valueOf(statue);
     }
 
     public void changerStatut(TaskStatue nouveauStatut) {

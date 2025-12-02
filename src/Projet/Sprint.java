@@ -16,16 +16,17 @@ public class Sprint {
     protected List<Tache> taches;
 
     public Sprint(String idSprint, String objectif, LocalDate dateDebut,
-                  LocalDate dateFin, SprintStatut statut, Project projet,
+                  LocalDate dateFin, String statut, Project projet,
                   chefprojet chefprojet, List<Tache> taches) {
         this.idSprint = idSprint;
         this.objectif = objectif;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
-        this.statut = statut;
+        this.statut = SprintStatut.valueOf(statut);
         this.projet = projet;
         this.chefprojet = chefprojet;
         this.taches = taches;
+
     }
 
     public double calculerAvancementSprint() {
