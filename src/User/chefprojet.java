@@ -1,12 +1,14 @@
 package User;
 import Projet.Project;
+import Projet.Tache;
+
 import java.util.List;
 
 public final class chefprojet extends User {
     protected List <Project> projetAGerer;
 
-    public chefprojet(String id, String nom, String prenom, String email, String mdp, List<Project> projetAGerer) {
-        super(id, nom, prenom, email, mdp);
+    public chefprojet(String id, String nom, String prenom, String email, String mdp,String role,String type, List<Project> projetAGerer) {
+        super(id, nom, prenom, email, mdp,role,type);
         this.projetAGerer = projetAGerer;
     }
 
@@ -24,6 +26,9 @@ public final class chefprojet extends User {
 
     public void assignerMembreAuProjet(Project p, Membre m) {
         p.ajouterMembre(m);
+    }
+    public void ajouterMembreTache(Membre m , Tache t ){
+        m.tachesAssignes.add(t);
     }
 
 }

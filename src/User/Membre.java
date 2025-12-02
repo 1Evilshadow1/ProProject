@@ -8,8 +8,8 @@ public final  class Membre extends User {
     List<Tache> tachesAssignes;
     String dispo;
 
-    public Membre(String id, String nom, String prenom, String email, String mdp, String dispo, List<Tache> tachesAssignes) {
-        super(id, nom, prenom, email, mdp);
+    public Membre(String id, String nom, String prenom, String email, String mdp,String role,String type, String dispo, List<Tache> tachesAssignes) {
+        super(id, nom, prenom, email, mdp,role,type);
         this.tachesAssignes = tachesAssignes;
         this.dispo = dispo;
     }
