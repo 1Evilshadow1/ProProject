@@ -5,3 +5,4 @@ public enum Difficulté {
     Moyenne,
     Difficile
 }
+

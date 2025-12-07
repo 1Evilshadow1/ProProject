@@ -1,5 +1,7 @@
 package Probleme;
 import java.time.LocalDate;
+import Exceptions.ParametreInvalideException;
+
 public sealed abstract class Probleme 
         permits Bug, ProblemeSysteme {
 
@@ -9,7 +11,13 @@ public sealed abstract class Probleme
     protected LocalDate dateApparition;
     protected LocalDate dateResolution;
 
-    public Probleme(String idProbleme, String message) {
+    public Probleme(String idProbleme, String message) throws ParametreInvalideException {
+        if (idProbleme == null || idProbleme.isBlank()) {
+            throw new ParametreInvalideException("ID problème ne peut pas être vide");
+        }
+        if (message == null || message.isBlank()) {
+            throw new ParametreInvalideException("Message ne peut pas être vide");
+        }
         this.idProbleme = idProbleme;
         this.message = message;
         this.statut = StatutProbleme.NonResolu;

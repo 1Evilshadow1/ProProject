@@ -1,0 +1,7 @@
+module gestion.projet {
+    exports Projet;
+    exports Probleme;
+    exports User;
+    exports Exceptions;
+    exports Test; 
+}

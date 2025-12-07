@@ -1,7 +1,8 @@
 package Projet;
 import User.Membre;
-import java.util.Date;
 import java.time.LocalDate;
+
+import Exceptions.ParametreInvalideException;
 public class Commentaire {
     protected String id;
     protected String contenue;
@@ -17,7 +18,10 @@ public class Commentaire {
         this.dateCreation = LocalDate.now();
     }
 
-    public void editer(String nouveauContenue) {
+    public void editer(String nouveauContenue) throws ParametreInvalideException {
+        if (nouveauContenue == null || nouveauContenue.isBlank()) {
+            throw new ParametreInvalideException("Contenu du commentaire ne peut pas être vide");
+        }
         this.contenue = nouveauContenue;
     }
 

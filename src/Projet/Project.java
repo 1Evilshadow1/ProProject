@@ -2,11 +2,11 @@ package Projet;
 
 import User.chefprojet;
 import User.Membre;
-import Projet.Tache;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
-public abstract class Project  {
+public class Project  {
     protected String info;
     protected chefprojet chefProjet;
     protected List<Membre> equipe;
@@ -20,6 +20,17 @@ public abstract class Project  {
         this.equipe = equipe;
         this.taches = taches;
         this.avancement = avancement;
+    }
+
+    public String creerRapport() {
+    GenerateurRapport gen = () -> "Projet: " + info + "\nTâches: " + taches.size();
+    return gen.genererRapport();
+}
+
+    public List<String> getNomsMembres() {
+        return equipe.stream()                   
+                .map(m -> m.getName())            
+                .collect(Collectors.toList());    
     }
 
     public void ajouterMembre(Membre membre) {

@@ -3,16 +3,23 @@ package Probleme;
 import User.Membre;
 import java.time.LocalDate;
 
+import Exceptions.ParametreInvalideException;
+
 public final class Bug extends Probleme {
 
     private Membre membreAssigne;
 
-    public Bug(String id, String message,StatutProbleme statut,LocalDate dateApparition ,LocalDate dateResolution, Membre membreAssigne) {
+    public Bug(String id, String message, StatutProbleme statut, Membre membreAssigne) 
+            throws ParametreInvalideException {
         super(id, message);
+        if (membreAssigne == null) {
+            throw new ParametreInvalideException("Membre assigné obligatoire");
+        }
+        
+        this.membreAssigne = membreAssigne;
         this.statut = StatutProbleme.NonResolu;
         this.dateApparition = LocalDate.now();
         this.dateResolution = null;
-        this.membreAssigne = membreAssigne;
     }
 
     @Override

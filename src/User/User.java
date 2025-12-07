@@ -1,6 +1,5 @@
 package User;
 
-import java.lang.reflect.Type;
 import java.time.LocalDateTime;
 
 public sealed class User permits chefprojet,Membre,Administrateur {
@@ -20,6 +19,7 @@ public sealed class User permits chefprojet,Membre,Administrateur {
         this.prenom=prenom;
         this.email=email;
         this.mdp=mdp;
+        this.dateCreation=LocalDateTime.now();
         this.role=RoleUser.valueOf(Role);
         this.type= TypeUser.valueOf(type);
 

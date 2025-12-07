@@ -5,30 +5,46 @@ import java.util.List;
 import java.util.Map;
 import User.Membre;
 
-public class Rapport {
-    protected String id;
-    protected Project project;
-    protected LocalDate dateGeneration;
-    protected Map<TaskStatue, Integer> statistiquesTaches;
-    protected List<Membre> membresActifs;
-    protected double tauxAvancement;
 
-    public Rapport(String id, Project project, LocalDate dateGeneration,
+public record Rapport(
+    String id,
+    Project project,
+    LocalDate dateGeneration,
+    Map<TaskStatue, Integer> statistiquesTaches,
+    List<Membre> membresActifs,
+    double tauxAvancement
+) {
+    
+    // Constructeur compact avec validation
+    public Rapport {
+        if (id == null || id.isBlank()) {
+            throw new IllegalArgumentException("ID ne peut pas être vide");
+        }
+        if (project == null) {
+            throw new IllegalArgumentException("Project ne peut pas être null");
+        }
+        if (tauxAvancement < 0 || tauxAvancement > 100) {
+            throw new IllegalArgumentException("Taux d'avancement doit être entre 0 et 100");
+        }
+    }
+    
+    // Constructeur
+    public Rapport(String id, Project project,
                    Map<TaskStatue, Integer> statistiquesTaches,
                    List<Membre> membresActifs, double tauxAvancement) {
-        this.id = id;
-        this.project = project;
-        this.dateGeneration = dateGeneration;
-        this.statistiquesTaches = statistiquesTaches;
-        this.membresActifs = membresActifs;
-        this.tauxAvancement = tauxAvancement;
+        this(id, project, LocalDate.now(), statistiquesTaches, membresActifs, tauxAvancement);
+    }
+    
+    
+     //Méthode pour obtenir le nombre total de tâches
+    public int getNombreTotalTaches() {
+        int total = 0;
+        for (int v : statistiquesTaches.values()) total += v;
+        return total;
     }
 
-    public String getId(){
-        return id;
-    }
-
-    public Project getProject(){
-        return project;
+     // Méthode pour vérifier si le projet est terminé 
+    public boolean isProjetTermine() {
+        return tauxAvancement >= 100.0;
     }
 }
